@@ -24,12 +24,19 @@
       <input type="password" id="senha" required>
 
       <div class="button-group">
-        <button type="submit" class="btn registrar">REGISTRAR</button>
+        <button type="submit" class="btn registrar" id="btn Registrar">REGISTRAR</button>
         <button type="submit" class="btn entrar">ENTRAR</button>
       </div>
     </form>
   </div>
 </div>
+
+<script>
+  document.getElementById('btn Registrar').addEventListener('click', function(event) {
+    event.preventDefault(); // 🛑 Impede o envio do formulário
+    window.location.href = 'registrar.html'; // 🔁 Vai pra página de registro
+  });
+</script>
 
 </body>
 </html>
