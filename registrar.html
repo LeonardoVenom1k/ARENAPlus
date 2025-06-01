@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro - Arena+</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-register.css">
 </head>
 <body>
   <div class="container">
     <!-- Lado Esquerdo (Logo) -->
-    <div class="logo-box">
+    <div class="logo-box fade-in">
       <img src="img/Arena+logo.png" alt="Logo Arena+" class="logo-img">
     </div>
 
     <!-- Lado Direito (Registro) -->
-    <div class="login-card">
+    <div class="login-card fade-in">
       <div class="login-bg">
         <div class="user-icon"></div>
-        <form action="#" method="POST">
-          <label for="nome">NOME COMPLETO</label>
-          <input type="text" id="nome" required>
+        <form onsubmit="registrarUsuario(event)">
+
 
           <label for="email">E-MAIL</label>
           <input type="email" id="email" required>
@@ -37,5 +36,33 @@
       </div>
     </div>
   </div>
+
+  <script>
+  function registrarUsuario(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value;
+    const confirmar = document.getElementById("confirmar").value;
+
+    if (senha !== confirmar) {
+      alert("As senhas não coincidem.");
+      return;
+    }
+
+    const usuario = {
+      email: email,
+      senha: senha
+    };
+
+    // Salva o usuário no localStorage (chave: "usuario_arena")
+    localStorage.setItem("usuario_arena", JSON.stringify(usuario));
+    alert("Usuário registrado com sucesso!");
+
+    // Redireciona para a tela de login
+    window.location.href = "index.html";
+  }
+</script>
+
 </body>
 </html>

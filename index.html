@@ -8,15 +8,16 @@
 <body>
   <div class="container">
     <!-- Lado Esquerdo (Logo) -->
-    <div class="logo-box">
+    <div class="logo-box fade-in">
       <img src="img/Arena+logo.png" alt="Logo Arena+" class="logo-img">
     </div>
 
 <!-- Lado Direito (Login) -->
-<div class="login-card">
+<div class="login-card fade-in">
   <div class="login-bg">
     <div class="user-icon"></div>
-    <form>
+    <form onsubmit="fazerLogin(event)">
+
       <label for="email">E-MAIL</label>
       <input type="email" id="email" required>
 
@@ -37,6 +38,31 @@
     window.location.href = 'registrar.html'; // 🔁 Vai pra página de registro
   });
 </script>
+
+<script>
+  function fazerLogin(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value;
+
+    const usuarioSalvo = JSON.parse(localStorage.getItem("usuario_arena"));
+
+    if (!usuarioSalvo) {
+      alert("Nenhum usuário registrado.");
+      return;
+    }
+
+    if (email === usuarioSalvo.email && senha === usuarioSalvo.senha) {
+      alert("Login bem-sucedido!");
+      // Aqui você pode redirecionar para a dashboard ou página principal
+      window.location.href = "dashboard.html"; // exemplo
+    } else {
+      alert("E-mail ou senha incorretos.");
+    }
+  }
+</script>
+
 
 </body>
 </html>
