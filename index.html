@@ -37,6 +37,7 @@
     event.preventDefault(); // 🛑 Impede o envio do formulário
     window.location.href = 'registrar.html'; // 🔁 Vai pra página de registro
   });
+
 </script>
 
 <script>
@@ -46,22 +47,17 @@
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value;
 
-    const usuarioSalvo = JSON.parse(localStorage.getItem("usuario_arena"));
+    const usuarioCorreto = "leonardovenom9@gmail.com";
+    const senhaCorreta = "2025";
 
-    if (!usuarioSalvo) {
-      alert("Nenhum usuário registrado.");
-      return;
-    }
-
-    if (email === usuarioSalvo.email && senha === usuarioSalvo.senha) {
-      alert("Login bem-sucedido!");
-      // Aqui você pode redirecionar para a dashboard ou página principal
-      window.location.href = "dashboard.html"; // exemplo
+    if (email === usuarioCorreto && senha === senhaCorreta) {
+      window.location.href = "canais.html";
     } else {
       alert("E-mail ou senha incorretos.");
     }
   }
 </script>
+
 
 
 </body>
