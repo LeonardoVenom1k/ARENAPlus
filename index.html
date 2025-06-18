@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Arena+ Login</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Lado Esquerdo (Logo) -->
@@ -12,54 +14,57 @@
       <img src="img/Arena+logo.png" alt="Logo Arena+" class="logo-img">
     </div>
 
-<!-- Lado Direito (Login) -->
-<div class="login-card fade-in">
-  <div class="login-bg">
-    <div class="user-icon"></div>
-    <form onsubmit="fazerLogin(event)">
+    <!-- Lado Direito (Login) -->
+    <div class="login-card fade-in">
+      <div class="login-bg">
+        <div class="user-icon"></div>
+        <form onsubmit="fazerLogin(event)">
 
-      <label for="email">E-MAIL</label>
-      <input type="email" id="email" required>
+          <label for="email">E-MAIL</label>
+          <input type="email" id="email" required>
 
-      <label for="senha">SENHA</label>
-      <input type="password" id="senha" required>
+          <label for="senha">SENHA</label>
+          <input type="password" id="senha" required>
 
-      <div class="button-group">
-        <button type="submit" class="btn registrar" id="btn Registrar">REGISTRAR</button>
-        <button type="submit" class="btn entrar">ENTRAR</button>
+          <div class="button-group">
+            <button type="submit" class="btn registrar" id="btn Registrar">REGISTRAR</button>
+            <button type="submit" class="btn entrar">ENTRAR</button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
+    </div>
 
-<script>
-  document.getElementById('btn Registrar').addEventListener('click', function(event) {
-    event.preventDefault(); // 🛑 Impede o envio do formulário
-    window.location.href = 'registrar.html'; // 🔁 Vai pra página de registro
-  });
+    <script>
+      document.getElementById('btn Registrar').addEventListener('click', function (event) {
+        event.preventDefault(); // 🛑 Impede o envio do formulário
+        window.location.href = 'registrar.html'; // 🔁 Vai pra página de registro
+      });
 
-</script>
+    </script>
 
-<script>
-  function fazerLogin(e) {
-    e.preventDefault();
+    <script>
+      function fazerLogin(e) {
+        e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value;
+        const email = document.getElementById("email").value.trim();
+        const senha = document.getElementById("senha").value;
 
-    const usuarioCorreto = "leonardovenom9@gmail.com";
-    const senhaCorreta = "2025";
+        const usuarioCorreto = "leonardovenom9@gmail.com";
+        const senhaCorreta = "2025";
 
-    if (email === usuarioCorreto && senha === senhaCorreta) {
-      window.location.href = "canais.html";
-    } else {
-      alert("E-mail ou senha incorretos.");
-    }
-  }
-</script>
-
-
+        if (email === usuarioCorreto && senha === senhaCorreta) {
+          window.location.href = "canais.html";
+        } else {
+          alert("E-mail ou senha incorretos.");
+        }
+      }
+    </script>
 
 </body>
-</html>
 
+<footer>
+  <small>&copy; 2025 Arena+. Todos os direitos reservados.</small>
+</footer>
+
+
+</html>

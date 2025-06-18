@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Registro - Arena+</title>
   <link rel="stylesheet" href="css/style-register.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Lado Esquerdo (Logo) -->
@@ -38,31 +40,36 @@
   </div>
 
   <script>
-  function registrarUsuario(e) {
-    e.preventDefault();
+    function registrarUsuario(e) {
+      e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const senha = document.getElementById("senha").value;
-    const confirmar = document.getElementById("confirmar").value;
+      const email = document.getElementById("email").value.trim();
+      const senha = document.getElementById("senha").value;
+      const confirmar = document.getElementById("confirmar").value;
 
-    if (senha !== confirmar) {
-      alert("As senhas não coincidem.");
-      return;
+      if (senha !== confirmar) {
+        alert("As senhas não coincidem.");
+        return;
+      }
+
+      const usuario = {
+        email: email,
+        senha: senha
+      };
+
+      // Salva o usuário no localStorage (chave: "usuario_arena")
+      localStorage.setItem("usuario_arena", JSON.stringify(usuario));
+      alert("Usuário registrado com sucesso!");
+
+      // Redireciona para a tela de login
+      window.location.href = "index.html";
     }
-
-    const usuario = {
-      email: email,
-      senha: senha
-    };
-
-    // Salva o usuário no localStorage (chave: "usuario_arena")
-    localStorage.setItem("usuario_arena", JSON.stringify(usuario));
-    alert("Usuário registrado com sucesso!");
-
-    // Redireciona para a tela de login
-    window.location.href = "index.html";
-  }
-</script>
+  </script>
 
 </body>
+
+<footer>
+  <small>&copy; 2025 Arena+. Todos os direitos reservados.</small>
+</footer>
+
 </html>

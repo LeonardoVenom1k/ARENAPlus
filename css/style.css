@@ -11,7 +11,7 @@ body {
 
 .container {
   display: flex;
-  gap:10px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -26,7 +26,6 @@ body {
   height: auto;
   margin-bottom: 20px;
 }
-
 
 .buttons {
   display: flex;
@@ -53,7 +52,6 @@ button {
   overflow: hidden;
   display: flex;
 }
-
 
 .login-bg {
   background-image: url("../img/Fundo login.png");
@@ -97,6 +95,11 @@ form input {
   font-size: 16px;
 }
 
+input[type="email"],
+input[type="password"] {
+  padding-left: 10px; /* 👈 isso move o cursor pro lado */
+}
+
 .button-group {
   display: flex;
   justify-content: space-between;
@@ -114,13 +117,22 @@ form input {
   cursor: pointer;
 }
 
-input[type="email"],
-input[type="password"] {
-  padding-left: 10px; /* 👈 isso move o cursor pro lado */
+footer {
+  background-color: #2C2C2C;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  color: #aaa;
+  border-top: 1px solid #444;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 
-.registrar, .entrar {
+.registrar,
+.entrar {
   background-color: #d72638;
 }
 
@@ -139,4 +151,43 @@ input[type="password"] {
   animation: fadeIn 1s ease-out forwards;
 }
 
+/* 🔥 Responsivo pra mobile: esconder logo e ajustar o login */
+@media screen and (max-width: 768px) {
+  body {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 10px;
+  }
 
+  .logo-box {
+    display: none;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    margin-top: 30px;
+  }
+
+  .login-bg {
+    padding: 50px 50px;
+  }
+
+  .user-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  form input {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 8px 5px;
+  }
+}

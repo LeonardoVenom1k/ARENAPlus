@@ -9,6 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  flex-direction: column;
 }
 
 .container {
@@ -118,3 +119,56 @@ form input {
   animation: fadeIn 1s ease-out forwards;
 }
 
+footer {
+  background-color: #2C2C2C;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9em;
+  color: #aaa;
+  border-top: 1px solid #444;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+/* ✅ Responsividade: tira logo no mobile e centraliza */
+@media screen and (max-width: 768px) {
+  body {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .logo-box {
+    display: none;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    min-height: auto;
+    margin-top: 30px;
+  }
+
+  .login-bg {
+    padding: 50px 90px;
+  }
+
+  .user-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  form input {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 8px 5px;
+  }
+}
