@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Globo RJ - Arena+</title>
   <style>
-    html, body {
+    html,
+    body {
       height: 100%;
       margin: 0;
       padding: 0;
@@ -18,23 +19,35 @@
     body {
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
     }
 
     header {
       background-color: #2C2C2C;
-      text-align: left;
-      padding: 10px 20px;
-      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      position: relative;
     }
 
     header img {
       width: 200px;
       height: auto;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .player-container {
-      flex: 1 1 auto;
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -57,7 +70,19 @@
       font-size: 0.9em;
       color: #aaa;
       border-top: 1px solid #444;
-      flex-shrink: 0;
+    }
+
+    /* Responsivo pra tela menor */
+    @media screen and (max-width: 768px) {
+      header img {
+        width: 120px;
+        left: 10px;
+      }
+
+      header h1 {
+        font-size: 20px;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -65,7 +90,8 @@
 <body>
 
   <header>
-    <img src="/img/Arena+logo.png" alt="Arena+">
+    <img src="/ARENAPlus/img/Arena+logo.png" alt="Arena+">
+    <h1>Globo RJ</h1>
   </header>
 
   <div class="player-container">

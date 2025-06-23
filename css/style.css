@@ -27,24 +27,6 @@ body {
   margin-bottom: 20px;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-button {
-  flex: 1;
-  padding: 10px;
-  margin: 5px;
-  font-weight: bold;
-  border: none;
-  border-radius: 20px;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .login-card {
   width: 450px;
   min-height: 500px;
@@ -97,13 +79,38 @@ form input {
 
 input[type="email"],
 input[type="password"] {
-  padding-left: 10px; /* 👈 isso move o cursor pro lado */
+  padding-left: 10px;
 }
 
 .button-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.button-group button,
+.button-group a {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  box-sizing: border-box;
+}
+
+.button-group a {
+  display: flex;
 }
 
 .btn {
@@ -115,6 +122,12 @@ input[type="password"] {
   color: white;
   font-size: 20px;
   cursor: pointer;
+}
+
+a.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
 }
 
 footer {
@@ -129,7 +142,6 @@ footer {
   bottom: 0;
   left: 0;
 }
-
 
 .registrar,
 .entrar {
@@ -151,7 +163,7 @@ footer {
   animation: fadeIn 1s ease-out forwards;
 }
 
-/* 🔥 Responsivo pra mobile: esconder logo e ajustar o login */
+/* Responsivo pra celular */
 @media screen and (max-width: 768px) {
   body {
     height: auto;
@@ -162,7 +174,7 @@ footer {
   }
 
   .logo-box {
-    display: none;
+    display: none !important;
   }
 
   .login-card {
@@ -189,5 +201,11 @@ footer {
   .btn {
     font-size: 15px;
     padding: 8px 5px;
+  }
+
+  .button-group button,
+  .button-group a {
+    max-width: 100%;
+    font-size: 16px;
   }
 }
