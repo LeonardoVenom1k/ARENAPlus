@@ -20,8 +20,8 @@
         <div class="user-icon"></div>
         <form onsubmit="fazerLogin(event)">
 
-          <label for="email">E-MAIL</label>
-          <input type="email" id="email" required>
+          <label for="usuario"> NOME DE USUÁRIO</label>
+          <input type="text" id="usuario" required>
 
           <label for="senha">SENHA</label>
           <input type="password" id="senha" required>
@@ -35,23 +35,33 @@
       </div>
     </div>
 
-    <script>
-      function fazerLogin(e) {
-        e.preventDefault();
+<script>
+  function fazerLogin(e) {
+    e.preventDefault();
 
-        const email = document.getElementById("email").value.trim();
-        const senha = document.getElementById("senha").value;
+    const usuario = document.getElementById("usuario").value.trim();
+    const senha = document.getElementById("senha").value;
 
-        const usuarioCorreto = "leonardovenom9@gmail.com";
-        const senhaCorreta = "2025";
+    // Lista de usuários válidos
+    const usuarios = [
+        { nome: "Leonardo", senha: "2025" },
+        { nome: "Eder", senha: "2025" },
+        { nome: "OutroUser", senha: "abc123" }
+    ];
 
-        if (email === usuarioCorreto && senha === senhaCorreta) {
-          window.location.href = "canais.html";
-        } else {
-          alert("E-mail ou senha incorretos.");
-        }
-      }
-    </script>
+    // Verifica se o usuário e senha estão corretos
+    const usuarioValido = usuarios.some(function (u) {
+        return u.nome === usuario && u.senha === senha;
+    });
+
+    if (usuarioValido) {
+        sessionStorage.setItem("usuarioLogado", "true");
+        window.location.href = "canais.html";
+    } else {
+        alert("Usuário ou senha incorretos.");
+    }
+}
+</script>
 
 </body>
 
