@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<script>
-  if (sessionStorage.getItem("usuarioLogado") !== "true") {
-    window.location.href = "/ARENAPlus/index.html";  // 👉 Ou o nome da sua tela de login
-  }
-</script>
+<script src="/ARENAPLus/js/check.js"></script>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Globo SP - Arena+</title>
+  <title>GLOBO SP - Arena+</title>
   <style>
     html,
     body {
@@ -55,9 +51,26 @@
     .player-container {
       flex: 1;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
       padding: 10px 20px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .player-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: #d72638;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     iframe {
@@ -78,7 +91,6 @@
       border-top: 1px solid #444;
     }
 
-    /* Responsivo pra tela menor */
     @media screen and (max-width: 768px) {
       header img {
         width: 120px;
@@ -89,6 +101,16 @@
         font-size: 20px;
         text-align: center;
       }
+
+      .button-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+
+      .player-button {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -97,17 +119,31 @@
 
   <header>
     <img src="/ARENAPlus/img/Arena+logo.png" alt="Arena+">
-    <h1>Globo SP</h1>
+    <h1>GLOBO SP</h1>
   </header>
 
   <div class="player-container">
-    <iframe src="https://embedflix.top/tv/player.php?id=globo-sp" allow="encrypted-media" allowfullscreen=""
+
+    <div class="button-group">
+      <button class="player-button" onclick="trocarPlayer('https://embedflix.top/tv/player.php?id=globo-sp')">Opção
+        1</button>
+      <button class="player-button" onclick="trocarPlayer('https://embedtv-2.icu/globosp')">Opção 2</button>
+    </div>
+
+    <iframe id="playerFrame" src="https://embedflix.top/tv/player.php?id=globo-sp" allow="encrypted-media" allowfullscreen=""
       frameborder="0" width="100%" height="400"></iframe>
+
   </div>
 
   <footer>
     &copy; 2025 Arena+. Todos os direitos reservados.
   </footer>
+
+  <script>
+    function trocarPlayer(link) {
+      document.getElementById('playerFrame').src = link;
+    }
+  </script>
 
 </body>
 
