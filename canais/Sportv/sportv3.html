@@ -1,109 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<script src="ARENAPlus/js/check.js"></script>
+<script src="../../js/check.js"></script>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sportv 3 - Arena+</title>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background-color: #1C1C1C;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SPORTV 3 - Arena+</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #1C1C1C;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    header {
-      background-color: #2C2C2C;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 50px 20px;
-      position: relative;
-    }
+        header {
+            background-color: #2C2C2C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            position: relative;
+        }
 
-    header img {
-      width: 200px;
-      height: auto;
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+        header img {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-    .player-container {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 20px;
-    }
+        .player-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+        }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      max-width: 960px;
-      border: none;
-      border-radius: 8px;
-      background-color: black;
-    }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
 
-    footer {
-      background-color: #2C2C2C;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 0.9em;
-      color: #aaa;
-      border-top: 1px solid #444;
-    }
+        .player-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: #d72638;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    /* Responsivo pra tela menor */
-    @media screen and (max-width: 768px) {
-      header img {
-        width: 120px;
-        left: 10px;
-      }
+        iframe {
+            width: 100%;
+            height: 100%;
+            max-width: 960px;
+            border: none;
+            border-radius: 8px;
+            background-color: black;
+        }
 
-      header h1 {
-        font-size: 20px;
-        text-align: center;
-      }
-    }
-  </style>
+        footer {
+            background-color: #2C2C2C;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            color: #aaa;
+            border-top: 1px solid #444;
+        }
+
+        @media screen and (max-width: 768px) {
+            header img {
+                width: 120px;
+                left: 10px;
+            }
+
+            header h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .button-group {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+
+            .player-button {
+                width: 80%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="/ARENAPlus/img/Arena+logo.png" alt="Arena+">
-    <h1>Sportv 3</h1>
-  </header>
+    <header>
+        <img src="/ARENAPlus/img/Arena+logo.png" alt="Arena+">
+        <h1>SPORTV 3</h1>
+    </header>
 
-  <div class="player-container">
-    <iframe src="https://embedflix.top/tv/player.php?id=sportv-3" allow="encrypted-media" allowfullscreen=""
-      frameborder="0" width="100%" height="400"></iframe>
-  </div>
+    <div class="player-container">
 
-  <footer>
-    &copy; 2025 Arena+. Todos os direitos reservados.
-  </footer>
+        <div class="button-group">
+            <button class="player-button" onclick="trocarPlayer('https://embedflix.top/tv/player.php?id=sportv-3')">Opção
+                1</button>
+            <button class="player-button" onclick="trocarPlayer('https://embedtv-2.icu/sportv3')">Opção 2</button>
+        </div>
+
+        <iframe id="playerFrame" src="https://embedflix.top/tv/player.php?id=sportv-3" allow="encrypted-media"
+            allowfullscreen="" frameborder="0" width="100%" height="400"></iframe>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Arena+. Todos os direitos reservados.
+    </footer>
+
+    <script>
+        function trocarPlayer(link) {
+            document.getElementById('playerFrame').src = link;
+        }
+    </script>
 
 </body>
 

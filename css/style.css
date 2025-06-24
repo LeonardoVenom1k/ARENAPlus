@@ -168,6 +168,7 @@ footer {
   animation: fadeIn 1s ease-out forwards;
 }
 
+
 /* 📱 Responsivo para celular */
 @media screen and (max-width: 768px) {
   body {

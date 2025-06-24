@@ -1,139 +1,111 @@
 <!doctype html>
 <html lang="pt-br">
 
-<script src="js/checkcanais.js"></script>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Arena+ Canais</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style-canais.css">
+
+  <script src="js/checkcanais.js" defer></script>
+  <script src="js/filtro.js" defer></script>
 </head>
 
 <body>
 
-  <!-- Cabeçalho só com a logo centralizada -->
   <header>
     <img src="img/Arena+logo.png" alt="Logo Arena+">
+
+    <div class="nav-links">
+      <a href="canais.html">Canais</a>
+      <a href="canais.html">Filmes</a>
+      <a href="canais.html">Séries</a>
+    </div>
+
+    <input type="text" id="filtroCanais" placeholder="Filtrar canais...">
   </header>
 
-  <!-- Conteúdo dos canais -->
+  <!-- PREMIERE -->
   <div class="container-canais">
-    <h2>Canais Premiere</h2>
-
+    <h2>PREMIERE</h2>
     <div class="carrossel-scroll">
-      <div class="item-canal">
-        <a href="canais/premieres/premiere1.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 1">
+      <div class="item-canal"><a href="canais/premieres/premiere1.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 1</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere2.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 2">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere2.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 2</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere3.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 3">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere3.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 3</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere4.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 4">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere4.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 4</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere5.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 5">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere5.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 5</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere6.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 6">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere6.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 6</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere7.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 7">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere7.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 7</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/premieres/premiere8.html"><img src="img/Premiere.png" class="img-fluid" alt="Premiere 8">
+        </a></div>
+      <div class="item-canal"><a href="canais/premieres/premiere8.html"><img src="img/Premiere.png">
           <div class="nome-canal">Premiere 8</div>
-        </a>
-      </div>
+        </a></div>
     </div>
   </div>
 
+  <!-- GLOBO -->
   <div class="container-canais">
-    <h2>Canais Globo</h2>
-
+    <h2>GLOBO</h2>
     <div class="carrossel-scroll">
-      <div class="item-canal">
-        <a href="canais/globo/globorj.html"><img src="img/globoimg.jpg" class="img-fluid" alt="Globo RJ">
+      <div class="item-canal"><a href="canais/globo/globorj.html"><img src="img/globoimg.jpg">
           <div class="nome-canal">Globo RJ</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/globo/globosp.html"><img src="img/globoimg.jpg" class="img-fluid" alt="Globo SP">
+        </a></div>
+      <div class="item-canal"><a href="canais/globo/globosp.html"><img src="img/globoimg.jpg">
           <div class="nome-canal">Globo SP</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/globo/globomg.html"><img src="img/globoimg.jpg" class="img-fluid" alt="Globo MG">
+        </a></div>
+      <div class="item-canal"><a href="canais/globo/globomg.html"><img src="img/globoimg.jpg">
           <div class="nome-canal">Globo MG</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/globo/globonews.html"><img src="img/globonews.jpg" class="img-fluid" alt="Globo News">
+        </a></div>
+      <div class="item-canal"><a href="canais/globo/globonews.html"><img src="img/globonews.jpg">
           <div class="nome-canal">Globo News</div>
-        </a>
-      </div>
+        </a></div>
     </div>
   </div>
 
+  <!-- SPORTV -->
   <div class="container-canais">
     <h2>SPORTV</h2>
-
     <div class="carrossel-scroll">
-      <div class="item-canal">
-        <a href="canais/sportv/sportv1.html"><img src="img/SporTV.png" class="img-fluid" alt="Sportv 1">
+      <div class="item-canal"><a href="canais/sportv/sportv1.html"><img src="img/SporTV.png">
           <div class="nome-canal">Sportv 1</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/sportv/sportv2.html"><img src="img/SporTV.png" class="img-fluid" alt="Sportv 2">
+        </a></div>
+      <div class="item-canal"><a href="canais/sportv/sportv2.html"><img src="img/SporTV.png">
           <div class="nome-canal">Sportv 2</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/sportv/sportv3.html"><img src="img/SporTV.png" class="img-fluid" alt="Sportv 3">
+        </a></div>
+      <div class="item-canal"><a href="canais/sportv/sportv3.html"><img src="img/SporTV.png">
           <div class="nome-canal">Sportv 3</div>
-        </a>
-      </div>
+        </a></div>
     </div>
   </div>
 
+  <!-- HBO -->
   <div class="container-canais">
     <h2>HBO</h2>
-
     <div class="carrossel-scroll">
-      <div class="item-canal">
-        <a href="canais/hbo/hbo1.html"><img src="img/HBO.jpg" class="img-fluid" alt="HBO">
+      <div class="item-canal"><a href="canais/hbo/hbo1.html"><img src="img/HBO.jpg">
           <div class="nome-canal">HBO</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/hbo/hbo2.html"><img src="img/HBO.jpg" class="img-fluid" alt="HBO 2">
+        </a></div>
+      <div class="item-canal"><a href="canais/hbo/hbo2.html"><img src="img/HBO.jpg">
           <div class="nome-canal">HBO 2</div>
-        </a>
-      </div>
-      <div class="item-canal">
-        <a href="canais/hbo/hbo+.html"><img src="img/HBOplus.png" class="img-fluid" alt="HBO PLUS">
+        </a></div>
+      <div class="item-canal"><a href="canais/hbo/hbo+.html"><img src="img/HBOplus.png">
           <div class="nome-canal">HBO PLUS</div>
-        </a>
-      </div>
+        </a></div>
     </div>
   </div>
 
