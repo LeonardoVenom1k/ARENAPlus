@@ -18,7 +18,7 @@
 
     if (usuarioValido) {
         sessionStorage.setItem("usuarioLogado", "true");
-        window.location.href = "/ARENAPLus/canais.html";
+        window.location.href = "/canais.html";
     } else {
         alert("Usuário ou senha incorretos.");
     }

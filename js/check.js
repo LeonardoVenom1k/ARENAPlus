@@ -1,3 +1,3 @@
   if (sessionStorage.getItem("usuarioLogado") !== "true") {
-    window.location.href = "/ARENAPlus/index.html";
+    window.location.href = "/index.html";
   }
