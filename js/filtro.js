@@ -36,3 +36,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Filmes
+document.addEventListener("DOMContentLoaded", () => {
+  const inputFiltro = document.getElementById("filtroFilmes");
+  const containers = document.querySelectorAll(".container-filmes");
+
+  inputFiltro.addEventListener("input", () => {
+    const filtro = inputFiltro.value.toLowerCase();
+
+    containers.forEach((container) => {
+      const filmes = container.querySelectorAll(".item-filme");
+      let temFilmeVisivel = false;
+
+      filmes.forEach((filme) => {
+        const titulo = filme.querySelector(".titulo-filme").textContent.toLowerCase();
+
+        if (titulo.includes(filtro)) {
+          filme.style.display = "block";
+          temFilmeVisivel = true;
+        } else {
+          filme.style.display = "none";
+        }
+      });
+
+      // mostra ou esconde o h2 baseado se tem filme visível
+      const tituloSecao = container.querySelector("h2");
+      if (temFilmeVisivel) {
+        tituloSecao.style.display = "block";
+      } else {
+        tituloSecao.style.display = "none";
+      }
+    });
+  });
+});
+
+
